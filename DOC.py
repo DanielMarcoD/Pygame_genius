@@ -17,3 +17,31 @@ status_bar.fill((0, 0, 0))                                # Cor da barra de stat
 
 tela_de_fundo = pygame.image.load('assets/DOC.png')                     # Imagem de fundo
 tela_jogo = pygame.image.load('assets/Fundo.png')
+
+# Cores
+VERMELHO = (255, 0, 0)
+VERDE = (0, 255, 0)
+AMARELO = (255, 255, 0)
+AZUL = (50, 190, 255)
+BRANCO = (255, 255, 255)
+
+# Sons
+sons = {'som_do': 'sons/do.wav', 'som_re': 'sons/re.wav', 'som_mi': 'sons/mi.wav', 'som_fa': 'sons/fa.wav',
+        'perdeu': 'sons/perdeu_jogo.wav', 'clique': 'sons/clique.wav'}
+
+# Poligonos que detectam a escolha com o clique do mouse
+verde = pygame.draw.polygon(tela_inicial, VERDE, ((81, 317), (230, 317), (230, 159)))
+amarelo = pygame.draw.polygon(tela_inicial, AMARELO, ((409, 315), (263, 315), (263, 168)))
+vermelha = pygame.draw.polygon(tela_inicial, VERMELHO, ((80, 345), (230, 346), (230, 495)))
+azul = pygame.draw.polygon(tela_inicial, AZUL, ((411, 345), (265, 347), (263, 495)))
+
+# Textos
+texto_comeco = texto_inicio_fonte.render('Jogar', True, (255, 255, 255))   # Texto do botao começar
+texto = ' '
+
+points = 0                                                      # Pontuação
+seq_colors = []                                            # Sequencia de cores que vao piscar
+game = False
+
+game_ranking = {'pontos': '', 'nome': ''}                       # Armazena quem esta no ranking
+player_name = '' 
